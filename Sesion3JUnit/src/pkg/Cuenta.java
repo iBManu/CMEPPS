@@ -18,6 +18,14 @@ public class Cuenta {
 		this.mMovimientos = new ArrayList<Movimiento>();
 	}
 	
+	public void ingresar(int cantidad) {
+		saldo += cantidad;
+	}
+	
+	public void retirar(int cantidad) {
+		saldo -= cantidad;
+	}
+	
 	public double getSaldo() {
 		return saldo;
 	}
