@@ -1,8 +1,10 @@
 package pkg;
 
+import java.util.List;
+
 public class Cuenta {
 
-	private double saldo;
+	/*private double saldo;
 	private String numero;
 	private String titular;
 	private List<Movimiento> mMovimientos;
@@ -31,6 +33,6 @@ public class Cuenta {
 	}
 	public void setTitular(String titular) {
 		this.titular = titular;
-	}
+	}*/
 	
 }
