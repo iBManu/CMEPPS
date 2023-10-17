@@ -1,5 +1,6 @@
 package pkg;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cuenta {
@@ -9,12 +10,12 @@ public class Cuenta {
 	private String titular;
 	private List<Movimiento> mMovimientos;
 	
-	public Cuenta(double saldo, String numero, String titular, List<Movimiento> mMovimientos) {
+	public Cuenta(double saldo, String numero, String titular) {
 		super();
 		this.saldo = saldo;
 		this.numero = numero;
 		this.titular = titular;
-		this.mMovimientos = mMovimientos;
+		this.mMovimientos = new ArrayList<Movimiento>();
 	}
 	
 	public double getSaldo() {
