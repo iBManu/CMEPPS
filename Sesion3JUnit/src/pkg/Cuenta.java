@@ -20,6 +20,15 @@ public class Cuenta {
 		this.mMovimientos = new ArrayList<Movimiento>();
 	}
 	
+	public void transaccionar(Movimiento m) {
+		if(m.getTipoOperacion() == Signo.H) {
+			ingresar(m.getImporte());
+		}
+		else if(m.getTipoOperacion() == Signo.D) {
+			retirar(m.getImporte());
+		}
+	}
+	
 	public void ingresar(double cantidad) {
 		this.saldo += cantidad;
 		this.mMovimientos.add(new Movimiento(cantidad,"Ingreso",Signo.H));
