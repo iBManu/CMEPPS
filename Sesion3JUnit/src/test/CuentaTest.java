@@ -34,14 +34,14 @@ class CuentaTest {
 
 	@Test
 	void testIngresar() {
-		cuenta.ingresar(3000);
-		assertEquals(3000,cuenta.getSaldo());
+		cuenta.ingresar(250);
+		assertEquals(250,cuenta.getSaldo());
 	}
 	
 	@Test
 	void testRetirar() {
-		cuenta.retirar(3000);
-		assertEquals(-3000,cuenta.getSaldo());
+		cuenta.retirar(250);
+		assertEquals(-250,cuenta.getSaldo());
 	}
 
 }

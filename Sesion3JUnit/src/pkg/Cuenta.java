@@ -3,6 +3,8 @@ package pkg;
 import java.util.ArrayList;
 import java.util.List;
 
+import pkg.Movimiento.Signo;
+
 public class Cuenta {
 
 	private double saldo;
@@ -18,12 +20,20 @@ public class Cuenta {
 		this.mMovimientos = new ArrayList<Movimiento>();
 	}
 	
-	public void ingresar(int cantidad) {
-		saldo += cantidad;
+	public void ingresar(double cantidad) {
+		this.saldo += cantidad;
+		this.mMovimientos.add(new Movimiento(cantidad,"Ingreso",Signo.H));
+		System.out.println("Se ha hecho un ingreso de " + cantidad + "€ en la cuenta de numero " + numero);
 	}
 	
-	public void retirar(int cantidad) {
-		saldo -= cantidad;
+	public void retirar(double cantidad) {
+		if(saldo-cantidad < -500) {
+			System.out.println("Fondos insuficientes (saldo "+this.saldo+"€) en la cuenta "+this.numero+" para el reintegro de "+cantidad+"€");
+			return;
+		}
+		this.saldo -= cantidad;
+		this.mMovimientos.add(new Movimiento(cantidad,"Retirada",Signo.D));
+		System.out.println("Se ha hecho una retirada de " + cantidad + "€ en la cuenta de numero " + numero);
 	}
 	
 	public double getSaldo() {
